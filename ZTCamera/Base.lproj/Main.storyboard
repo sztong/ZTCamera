@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ZTCamera" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Lx-fy-SLS" customClass="ZTPreviewView" customModule="ZTCamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pjS-sk-PZo" customClass="ZTOverlayView" customModule="ZTCamera" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eWf-vJ-jhv" customClass="ZTStatusView" customModule="ZTCamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lRI-rV-RsA">
+                                                <rect key="frame" x="312" y="0.0" width="48" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="GNo-Pe-lCl"/>
+                                                    <constraint firstAttribute="width" constant="48" id="sp8-YJ-8mF"/>
+                                                </constraints>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="camera_icon"/>
+                                                <connections>
+                                                    <action selector="swapCameras:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2Ts-sp-xZo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="lRI-rV-RsA" firstAttribute="centerY" secondItem="eWf-vJ-jhv" secondAttribute="centerY" id="eNE-od-OHw"/>
+                                            <constraint firstAttribute="trailing" secondItem="lRI-rV-RsA" secondAttribute="trailing" constant="15" id="mjR-ME-IpF"/>
+                                            <constraint firstAttribute="height" constant="48" id="oyo-dH-0mn"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50A-IA-GdH" customClass="ZTCameraModeView" customModule="ZTCamera" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="537" width="375" height="110"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bx4-Tg-kgL">
+                                                <rect key="frame" x="40" y="45" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="JG7-4A-s52"/>
+                                                    <constraint firstAttribute="width" constant="45" id="QlR-EU-Qgf"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="showCameraRoll:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DeU-0b-Uot"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="Bx4-Tg-kgL" secondAttribute="bottom" constant="20" id="1Lg-9L-Qx4"/>
+                                            <constraint firstAttribute="height" constant="110" id="dSb-CF-jYE"/>
+                                            <constraint firstItem="Bx4-Tg-kgL" firstAttribute="leading" secondItem="50A-IA-GdH" secondAttribute="leading" constant="40" id="w5F-4v-iHy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="eWf-vJ-jhv" firstAttribute="top" secondItem="pjS-sk-PZo" secondAttribute="top" id="1qd-4f-SBW"/>
+                                    <constraint firstAttribute="trailing" secondItem="50A-IA-GdH" secondAttribute="trailing" id="JwP-rg-I5G"/>
+                                    <constraint firstItem="eWf-vJ-jhv" firstAttribute="leading" secondItem="pjS-sk-PZo" secondAttribute="leading" id="nOv-5Q-b8E"/>
+                                    <constraint firstAttribute="trailing" secondItem="eWf-vJ-jhv" secondAttribute="trailing" id="qPr-dK-N5k"/>
+                                    <constraint firstAttribute="bottom" secondItem="50A-IA-GdH" secondAttribute="bottom" id="qyD-MQ-XQQ"/>
+                                    <constraint firstItem="50A-IA-GdH" firstAttribute="leading" secondItem="pjS-sk-PZo" secondAttribute="leading" id="sX2-LC-cpj"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="modeView" destination="50A-IA-GdH" id="hms-do-pqL"/>
+                                    <outlet property="statusView" destination="eWf-vJ-jhv" id="dIa-wz-1rm"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Lx-fy-SLS" secondAttribute="bottom" id="9rU-x5-vbZ"/>
+                            <constraint firstItem="pjS-sk-PZo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ABe-Tj-sJc"/>
+                            <constraint firstItem="4Lx-fy-SLS" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Gas-wB-mlQ"/>
+                            <constraint firstItem="pjS-sk-PZo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Kpj-Vd-39g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Lx-fy-SLS" secondAttribute="trailing" id="Pgo-17-p3Z"/>
+                            <constraint firstItem="4Lx-fy-SLS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X5s-aN-srZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pjS-sk-PZo" secondAttribute="trailing" id="cFi-cF-0yy"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pjS-sk-PZo" secondAttribute="bottom" id="shG-9F-d2u"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="overlayView" destination="pjS-sk-PZo" id="pbB-Jz-otZ"/>
+                        <outlet property="previewView" destination="4Lx-fy-SLS" id="EOT-aE-Iy4"/>
+                        <outlet property="thumbnailButton" destination="Bx4-Tg-kgL" id="mHI-0f-iC4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="camera_icon" width="28" height="21"/>
+    </resources>
+</document>
